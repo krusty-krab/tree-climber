@@ -1,6 +1,8 @@
 Tree Climber
 ============
 
+[![NPM version](https://badge.fury.io/js/tree-climber.svg)](http://badge.fury.io/js/tree-climber)
+
 Performs a traversal of a tree.
 Calls a `visitor` function on each node.
 
