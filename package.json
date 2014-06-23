@@ -1,10 +1,14 @@
 {
   "name": "tree-climber",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Traverses a JavaScript tree like structure. Calls a callback when visiting each node with the key, value, and current tree path.",
   "main": "index.js",
   "scripts": {
     "test": "minijasminenodewrap"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/krusty-krab/tree-climber.git"
   },
   "keywords": [
     "tree",

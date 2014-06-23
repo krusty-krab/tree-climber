@@ -2,6 +2,4 @@
 
 var climb = require('./lib/climb');
 
-exports.tree = {
-  climb: climb
-};
+exports.climb = climb;
