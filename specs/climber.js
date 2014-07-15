@@ -227,4 +227,21 @@ describe('climbAsync', function () {
     })
       .done(done);
   });
+
+  it('should not visit any other nodes if f is rejected', function (done) {
+    climbAsync(complexObj, function visitor (key) {
+      visited.push(key);
+
+      if (key === 'f')
+        return new Promise(function (resolve, reject) {
+          reject();
+        });
+      else
+        return Promise.resolve('foo');
+    })
+      .catch(function () {
+        expect(visited).toEqual(['f']);
+      })
+      .done(done);
+  });
 });
