@@ -1,5 +1,3 @@
 'use strict';
 
-var climb = require('./lib/climb');
-
-exports.climb = climb;
+module.exports =  require('./lib/climber');

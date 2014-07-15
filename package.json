@@ -1,10 +1,10 @@
 {
   "name": "tree-climber",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Traverses a JavaScript tree like structure. Calls a callback when visiting each node with the key, value, and current tree path.",
   "main": "index.js",
   "scripts": {
-    "test": "minijasminenodewrap"
+    "test": "mjnw"
   },
   "repository": {
     "type": "git",
@@ -17,9 +17,10 @@
   "author": "Joe Grund",
   "license": "MIT",
   "dependencies": {
-    "lodash.isplainobject": "2.4.1"
+    "lodash.isplainobject": "2.4.1",
+    "promise": "5.0.0"
   },
   "devDependencies": {
-    "minijasminenodewrap": "0.0.2"
+    "minijasminenodewrap": "0.0.5"
   }
 }
