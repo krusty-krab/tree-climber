@@ -62,21 +62,21 @@ Usage
 tree.climb(obj, visitor)
 ========================
 
-. `obj` {Array|Object} The "tree" to visit each node on.
-. `visitor` {Function} Called when visiting a node.
-    . `key` {String} The key of this node.
-    . `value` {Mixed} The value of this node.
-    . `path` {String} The full path of the tree to this node.
+* `obj` {Array|Object} The "tree" to visit each node on.
+* `visitor` {Function} Called when visiting a node.
+    * `key` {String} The key of this node.
+    * `value` {Mixed} The value of this node.
+    * `path` {String} The full path of the tree to this node.
 
 tree.climbAsync(obj, visitor)
 =============================
 
-. `obj` {Array|Object} The "tree" to visit each node on.
-. `visitor` {Function} Called when visiting a node.
-    . `key` {String} The key of this node.
-    . `value` {Mixed} The value of this node.
-    . `path` {String} The full path of the tree to this node.
-    . return: {Promise} A promise to pend resolving other nodes in the tree on.
+* `obj` {Array|Object} The "tree" to visit each node on.
+* `visitor` {Function} Called when visiting a node.
+    * `key` {String} The key of this node.
+    * `value` {Mixed} The value of this node.
+    * `path` {String} The full path of the tree to this node.
+    * return: {Promise} A promise to pend resolving other nodes in the tree on.
 
 Allows the user to perform asynchronous work on each node of the tree. Chains promises
 in such a way that race conditions are avoided. As an example if there was a path a->b->c and
