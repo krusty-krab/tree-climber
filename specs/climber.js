@@ -104,6 +104,18 @@ describe('climbing trees', function () {
       ]);
     });
 
+    it('should let the sep be overridden', function () {
+      climb([
+        {
+          a: {
+            b: 'c'
+          }
+        }
+      ], visitor, '/');
+
+      expect(visitor).toHaveBeenCalledWith('b', 'c', '0/a/b');
+    });
+
     it('should throw if a cycle is detected', function () {
       var obj = {
         a: {
@@ -114,6 +126,20 @@ describe('climbing trees', function () {
       obj.a.obj = obj;
 
       expect(shouldThrow).toThrow(new TypeError('Cycle detected.'));
+
+      function shouldThrow () {
+        climb(obj, visitor);
+      }
+    });
+
+    it('should throw if a separator is used in the key', function () {
+      var obj = {
+        'a.b': {
+          c: 'd'
+        }
+      };
+
+      expect(shouldThrow).toThrow(new Error('Key cannot contain a . character.'));
 
       function shouldThrow () {
         climb(obj, visitor);
@@ -176,6 +202,22 @@ describe('climbAsync', function () {
     })
       .then(function checkVisited () {
         expect(visited).toEqual(['c', 'd', 'e']);
+      })
+      .done(done);
+  });
+
+  it('should reject if a separator character is used in a key', function (done) {
+    var obj = {
+      'a.b': {
+        c: 'd'
+      }
+    };
+
+    climbAsync(obj, function visitor () {
+      return Promise.resolve('whatever');
+    })
+      .catch(function checkVisited (error) {
+        expect(error).toEqual(new Error('Key cannot contain a . character.'));
       })
       .done(done);
   });

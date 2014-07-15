@@ -1,6 +1,6 @@
 {
   "name": "tree-climber",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Traverses a JavaScript tree like structure. Calls a callback when visiting each node with the key, value, and current tree path.",
   "main": "index.js",
   "scripts": {
