@@ -59,7 +59,7 @@ Usage
 
 ```
 
-tree.climb(obj, visitor)
+tree.climb(obj, visitor, sep)
 ========================
 
 * `obj` {Array|Object} The "tree" to visit each node on.
@@ -67,8 +67,9 @@ tree.climb(obj, visitor)
     * `key` {String} The key of this node.
     * `value` {Mixed} The value of this node.
     * `path` {String} The full path of the tree to this node.
+* `sep` {String} An optional override for the path separator. Defaults to `.`. 
 
-tree.climbAsync(obj, visitor)
+tree.climbAsync(obj, visitor, sep)
 =============================
 
 * `obj` {Array|Object} The "tree" to visit each node on.
@@ -77,6 +78,7 @@ tree.climbAsync(obj, visitor)
     * `value` {Mixed} The value of this node.
     * `path` {String} The full path of the tree to this node.
     * return: {Promise} A promise to pend resolving other nodes in the tree on.
+* `sep` {String} An optional override for the path separator. Defaults to `.`.
 
 Allows the user to perform asynchronous work on each node of the tree. Chains promises
 in such a way that race conditions are avoided. As an example if there was a path a->b->c and
