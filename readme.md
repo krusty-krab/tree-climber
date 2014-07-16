@@ -48,7 +48,7 @@ Usage
     }
   }, visitorAsync)
   .then(console.log);
-  // [Promise, Promise, Promise]
+  // ['foo', 'foo', 'foo']
 
   function visitorAsync (key, value, path) {
     console.log(arguments);
