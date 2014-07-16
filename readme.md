@@ -46,7 +46,9 @@ Usage
         }
       }
     }
-  }, visitorAsync);
+  }, visitorAsync)
+  .then(console.log);
+  // [Promise, Promise, Promise]
 
   function visitorAsync (key, value, path) {
     console.log(arguments);
