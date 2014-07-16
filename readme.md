@@ -16,6 +16,7 @@ Usage
 
 ```javascript
   var tree = require('tree-climber');
+  var Promise = require('promise');
 
   tree.climb({
     path1: {
